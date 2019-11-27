@@ -1,17 +1,20 @@
 import React from "react";
 import { Link } from "gatsby";
 import Layout from "../components/Layout";
-import SimpleHero from "../components/SimpleHero";
+// import SimpleHero from "../components/SimpleHero";
 import Banner from "../components/Banner";
 import About from "../components/Home/About";
 import Services from "../components/Home/Services";
+import StyledHero from "../components/StyledHero";
+import { graphql } from "gatsby";
 
-export default () => (
+export default ({ data }) => (
   // 注意：此处React.Fragment就相当于<>和</>
   // 由于此处只返回一个Layout component，这里的React.Fragment可以不再需要
   <React.Fragment>
     <Layout>
-      <SimpleHero>
+      {/* <SimpleHero> */}
+      <StyledHero home="true" img={data.defaultBcg.childImageSharp.fluid}>
         <Banner
           title="continue exploring"
           info="Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur quidem,
@@ -21,9 +24,22 @@ export default () => (
             explore tours
           </Link>
         </Banner>
-      </SimpleHero>
+        {/* </SimpleHero> */}
+      </StyledHero>
       <About />
       <Services />
     </Layout>
   </React.Fragment>
 );
+
+export const query = graphql`
+  query {
+    defaultBcg: file(relativePath: { eq: "defaultBcg.jpeg" }) {
+      childImageSharp {
+        fluid(quality: 90, maxWidth: 4160) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+  }
+`;
