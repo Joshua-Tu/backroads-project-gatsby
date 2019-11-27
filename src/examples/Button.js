@@ -1,3 +1,4 @@
+// this file is for styled components demonstration
 import styled from "styled-components";
 
 const color = "blue";
