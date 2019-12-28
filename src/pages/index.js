@@ -14,7 +14,8 @@ export default ({ data }) => (
   <React.Fragment>
     <Layout>
       {/* <SimpleHero> */}
-      <StyledHero home="true" img={data.defaultBcg.childImageSharp.fluid}>
+      {/* StyledHero中的home等效于home="true" 如果home不出现就相当于home是false,即便设置home="false"，这里，home仍然会被当成true */}
+      <StyledHero home img={data.defaultBcg.childImageSharp.fluid}>
         <Banner
           title="continue exploring"
           info="Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur quidem,

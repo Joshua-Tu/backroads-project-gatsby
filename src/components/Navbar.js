@@ -1,6 +1,7 @@
 // useState是最新的函数化react的新功能
 import React, { useState } from "react";
-import { Link } from "gatsby";
+// import { Link } from "gatsby";
+import AniLink from "gatsby-plugin-transition-link/AniLink";
 import styles from "../css/navbar.module.css";
 import { FaAlignRight } from "react-icons/fa";
 import links from "../constants/links";
@@ -8,7 +9,7 @@ import socialIcons from "../constants/social-icons";
 import logo from "../images/logo.svg";
 
 const Navbar = () => {
-  // 这里useSat是为了设置当导航栏变成burger key后的状态，如果为true，就是出现burger key, 否则，就没有。
+  // 这里useState是为了设置当导航栏变成burger key后的状态，如果为true，就是出现burger key, 否则，就没有。
   // console.log(useState(false));
   const [isOpen, setNav] = useState(false);
   const toggleNav = () => {
@@ -37,7 +38,9 @@ const Navbar = () => {
           {links.map((item, index) => {
             return (
               <li key={index}>
-                <Link to={item.path}>{item.text}</Link>
+                <AniLink paintDrip color="teal" to={item.path}>
+                  {item.text}
+                </AniLink>
               </li>
             );
           })}

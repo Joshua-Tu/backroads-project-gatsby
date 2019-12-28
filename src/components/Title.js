@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const Title = ({ title, subtitle, className }) => {
   return (
-    // 注意这个className也是props的属性之一，记得要写出来，不是油父组件传入的
+    // 注意这个className也是props的属性之一，记得要写出来，不是由父组件传入的
     <div className={className}>
       <h4>
         <span className="title">{title}</span>

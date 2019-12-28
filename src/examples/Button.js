@@ -1,7 +1,7 @@
 // this file is for styled components demonstration
 import styled from "styled-components";
 
-const color = "blue";
+const color = "blue"; //这里你也可以用任何color value比如十六进制，八进制等等
 
 const Button = styled.button`
   /* color: red; */
