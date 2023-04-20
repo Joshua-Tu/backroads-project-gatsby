@@ -20,7 +20,7 @@
     "gatsby-background-image": "^0.9.7",
     "gatsby-image": "^2.2.34",
     "gatsby-plugin-sass": "^2.1.23",
-    "gatsby-plugin-sharp": "^2.3.4",
+    "gatsby-plugin-sharp": "^4.25.1",
     "gatsby-plugin-styled-components": "^3.1.13",
     "gatsby-plugin-transition-link": "^1.16.2",
     "gatsby-source-filesystem": "^2.1.39",
